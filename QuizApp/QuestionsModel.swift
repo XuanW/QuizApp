@@ -27,7 +27,7 @@ struct QuestionsModel {
     let questions = [
         Question(questionContent: "This was the only US President to serve more than two consecutive terms.", options: ["George Washington", "Franklin D. Roosevelt", "Woodrow Wilson", "Andrew Jackson"], answer: "Franklin D. Roosevelt"),
         Question(questionContent: "Which of the following countries has the most residents?", options:["Nigeria", "Russia", "Iran", "Vietnam"], answer: "Nigeria"),
-        Question(questionContent: "In what year war the United Nations founded?", options: ["1918", "1919", "1945", "1954"], answer: "1945"),
+        Question(questionContent: "In what year was the United Nations founded?", options: ["1918", "1919", "1945", "1954"], answer: "1945"),
         Question(questionContent: "The Titanic departed from the United Kingdom, where was it supposed to arrive?", options:["Paris", "Washington D.C.", "New York City", "Boston"], answer: "New York City"),
         Question(questionContent: "Which nation produces the most oil?", options:["Iran", "Iraq", "Canada"], answer: "Canada"),
         Question(questionContent: "Which country has most recently won consecutive World Cups in Soccer?", options: ["Italy", "Brazil", "Argentina"], answer: "Brazil"),

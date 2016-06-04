@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     let questions = QuestionsModel().getRandomizeQuestions()
-    let questionsPerRound = 4
-    var questionsAsked = 0 // Acting like an index for the questions array when smaller than questionsPerRound
+    let questionsPerGame = 4
+    var questionsAsked = 0 // Acting like an index for the questions array when smaller than questionsPerGame
     var score = 0
     
     var seconds = 0
@@ -77,14 +77,16 @@ class ViewController: UIViewController {
         timerLabel.text = "Time left: \(seconds)s"
         
         if(seconds == 0)  {
+            switchButtonState()
             showFeedback(result: false)
+            questionsAsked += 1
         }
     }
     
     @IBAction func checkAnswer(sender: UIButton) {
         // Disable buttons before the next question shows
         switchButtonState()
-        sender.setTitleColor(colorText, forState: .Disabled)
+//        sender.setTitleColor(colorText, forState: .Disabled)
         
         let playerAnswer = sender.titleForState(.Normal)
         if playerAnswer == questions[questionsAsked].answer {
@@ -116,16 +118,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextRound() {
-        if questionsAsked == questionsPerRound {
+        if questionsAsked == questionsPerGame {
             // Game is over
+            displayScore()
         }
         else {
+            // Show next question
             displayQuestion(questions[questionsAsked])
             switchButtonState()
             feedbackLabel.hidden = true
             correctAnswer.hidden = true
             startTimer()
         }
+    }
+    
+    func displayScore() {
+        optionContent1.hidden = true
+        optionContent2.hidden = true
+        optionContent3.hidden = true
+        optionContent4.hidden = true
+        feedbackLabel.hidden =  true
+        correctAnswer.hidden = true
+        nextButton.hidden = true
+        
+        questionContent.text = "Good job! You got \(score) out of \(questionsPerGame) questions right!"
     }
     
     // Helper methods

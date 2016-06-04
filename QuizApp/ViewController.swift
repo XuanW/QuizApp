@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     let questions = QuestionsModel().getRandomizeQuestions()
     let questionsPerRound = 4
-    var questionsAsked = 0
+    var questionsAsked = 0 // Acting like an index for the questions array when smaller than questionsPerRound
     var score = 0
     
     var seconds = 0
@@ -76,18 +76,21 @@ class ViewController: UIViewController {
         }
     }
     
-//    @IBAction func checkAnswer(sender: UIButton) {
-//        let playerAnswer = sender.titleForState(.Normal)
-//        if playerAnswer == getCurrentQuestion().answer {
-//            score += 1
-//        } else {
-//            //
-//        }
-//    }
+    @IBAction func checkAnswer(sender: UIButton) {
+        let playerAnswer = sender.titleForState(.Normal)
+        if playerAnswer == questions[questionsAsked].answer {
+            score += 1
+            showFeedback(result: true)
+        } else {
+            showFeedback(result: false)
+        }
+        questionsAsked += 1
+    }
     
     func showFeedback(result right: Bool) {
         timer.invalidate()
         timerLabel.hidden = true
+        nextButton.hidden = false
         
         let colorGreen = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
         let colorRed = UIColor(red: 247.0/255.0, green: 119.0/255.0, blue: 111.0/255.0, alpha: 1.0)

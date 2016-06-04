@@ -9,21 +9,13 @@
 import GameKit
 
 class Question {
-    var optionCount: Int = 4
     let questionContent: String
-    let option1: String
-    let option2: String
-    let option3: String
-    let option4: String
+    let options:[String]
     let answer: String
     
-    init(questionContent: String, optionCount: Int, option1: String, option2: String, option3: String, option4: String, answer: String) {
+    init(questionContent: String, options: [String], answer: String) {
         self.questionContent = questionContent
-        self.optionCount = optionCount
-        self.option1 = option1
-        self.option2 = option2
-        self.option3 = option3
-        self.option4 = option4
+        self.options = options
         self.answer = answer
     }
 }
@@ -33,26 +25,25 @@ class Question {
 
 struct QuestionsModel {
     let questions = [
-        Question(questionContent: "This was the only US President to serve more than two consecutive terms.", optionCount: 4, option1: "George Washington", option2: "Franklin D. Roosevelt", option3: "Woodrow Wilson", option4: "Andrew Jackson", answer: "Franklin D. Roosevelt"),
-        Question(questionContent: "Which of the following countries has the most residents?", optionCount: 4, option1: "Nigeria", option2: "Russia", option3: "Iran", option4: "Vietnam", answer: "Nigeria"),
-        Question(questionContent: "In what year war the United Nations founded?", optionCount: 4, option1: "1918", option2: "1919", option3: "1945", option4: "1954", answer: "1945"),
-        Question(questionContent: "The Titanic departed from the United Kingdom, where was it supposed to arrive?", optionCount: 4, option1: "Paris", option2: "Washington D.C.", option3: "New York City", option4: "Boston", answer: "New York City"),
-        Question(questionContent: "Which nation produces the most oil?", optionCount: 3, option1: "Iran", option2: "Iraq", option3: "Canada", option4: "", answer: "Canada"),
-        Question(questionContent: "Which country has most recently won consecutive World Cups in Soccer?", optionCount: 3, option1: "Italy", option2: "Brazil", option3: "Argetina", option4: "", answer: "Brazil"),
-        Question(questionContent: "Which of the following rivers is longest?", optionCount: 4, option1: "Yangtze", option2: "Mississippi", option3: "Congo", option4: "Mekong", answer: "Mississippi"),
-        Question(questionContent: "Which city is the oldest?", optionCount: 3, option1: "Mexico City", option2: "Cape Town", option3: "San Juan", option4: "", answer: "Mexico City"),
-        Question(questionContent: "Which country was the first to allow women to vote in national elections?", optionCount: 3, option1: "United States", option2: "Poland", option3: "Sweden", option4: "", answer: "Poland"),
-        Question(questionContent: "Which of these countries won the most medals in the 2012 Summer Games?", optionCount: 3, option1: "Germany", option2: "Japan", option3: "Great Britian", option4: "", answer: "Great Britian")
+        Question(questionContent: "This was the only US President to serve more than two consecutive terms.", options: ["George Washington", "Franklin D. Roosevelt", "Woodrow Wilson", "Andrew Jackson"], answer: "Franklin D. Roosevelt"),
+        Question(questionContent: "Which of the following countries has the most residents?", options:["Nigeria", "Russia", "Iran", "Vietnam"], answer: "Nigeria"),
+        Question(questionContent: "In what year war the United Nations founded?", options: ["1918", "1919", "1945", "1954"], answer: "1945"),
+        Question(questionContent: "The Titanic departed from the United Kingdom, where was it supposed to arrive?", options:["Paris", "Washington D.C.", "New York City", "Boston"], answer: "New York City"),
+        Question(questionContent: "Which nation produces the most oil?", options:["Iran", "Iraq", "Canada"], answer: "Canada"),
+        Question(questionContent: "Which country has most recently won consecutive World Cups in Soccer?", options: ["Italy", "Brazil", "Argentina"], answer: "Brazil"),
+        Question(questionContent: "Which of the following rivers is longest?", options: ["Yangtze", "Mississippi", "Congo", "Mekong"], answer: "Mississippi"),
+        Question(questionContent: "Which city is the oldest?", options: ["Mexico City", "Cape Town", "San Juan"], answer: "Mexico City"),
+        Question(questionContent: "Which country was the first to allow women to vote in national elections?", options: ["United States", "Poland", "Sweden"], answer: "Poland"),
+        Question(questionContent: "Which of these countries won the most medals in the 2012 Summer Games?", options: ["Germany", "Japan", "Great Britain"], answer: "Great Britain")
     ]
     
-    func getRandomQuestionSequence(questionsPerRound: Int) -> [Question] {
-        let randomSequence = getRandomSequence(questionsPerRound)
-        var randomQuestionSequence: [Question] = []
-        for i in 1...randomSequence.count {
-            randomQuestionSequence.append(questions[randomSequence[i-1]])
+    func getRandomizeQuestions() -> [Question] {
+        let randomSequence = getRandomSequence(questions.count)
+        var randomizedQuestions: [Question] = []
+        for index in randomSequence {
+            randomizedQuestions.append(questions[index])
         }
-        
-        return randomQuestionSequence
+        return randomizedQuestions
     }
 }
 

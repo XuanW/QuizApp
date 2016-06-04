@@ -115,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="optionContent1" destination="PAF-jE-98c" id="0et-l8-vIi"/>
                         <outlet property="questionContent" destination="vuk-a1-OPS" id="LiE-EQ-XkV"/>
                     </connections>
                 </viewController>

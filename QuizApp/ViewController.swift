@@ -20,8 +20,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let questionsPerRound = 4
+        var questionsAsked = 0
         let questions = QuestionsModel()
         let randomizedQuestions = questions.getRandomizeQuestions()
+        
+        func getCurrentQuestion() -> Question {
+            let currentQuestion = randomizedQuestions[questionsAsked]
+            questionsAsked += 1
+            return currentQuestion
+        }
         
         func displayQuestion(currentQuestion: Question) {
             questionContent.text = currentQuestion.questionContent
@@ -35,8 +43,9 @@ class ViewController: UIViewController {
             default: break
             }
         }
-        
-        displayQuestion(randomizedQuestions[0])
+
+        let currentQuestion = getCurrentQuestion()
+        displayQuestion(currentQuestion)
         
     }
 

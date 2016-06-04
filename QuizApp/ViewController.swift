@@ -67,6 +67,7 @@ class ViewController: UIViewController {
     
     func startTimer() {
         seconds = 5
+        timerLabel.hidden = false
         timerLabel.text = "Time left: \(seconds)s"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.subtractTime), userInfo: nil, repeats: true)
     }
@@ -82,10 +83,7 @@ class ViewController: UIViewController {
     
     @IBAction func checkAnswer(sender: UIButton) {
         // Disable buttons before the next question shows
-        optionContent1.enabled = false
-        optionContent2.enabled = false
-        optionContent3.enabled = false
-        optionContent4.enabled = false
+        switchButtonState()
         sender.setTitleColor(colorText, forState: .Disabled)
         
         let playerAnswer = sender.titleForState(.Normal)
@@ -116,6 +114,37 @@ class ViewController: UIViewController {
             correctAnswer.hidden = false
         }
     }
+    
+    @IBAction func nextRound() {
+        if questionsAsked == questionsPerRound {
+            // Game is over
+        }
+        else {
+            displayQuestion(questions[questionsAsked])
+            switchButtonState()
+            feedbackLabel.hidden = true
+            correctAnswer.hidden = true
+            startTimer()
+        }
+    }
+    
+    // Helper methods
+    
+    func switchButtonState() {
+        if optionContent1.enabled == true {
+            optionContent1.enabled = false
+        } else {optionContent1.enabled = true}
+        if optionContent2.enabled == true {
+            optionContent2.enabled = false
+        } else {optionContent2.enabled = true}
+        if optionContent3.enabled == true {
+            optionContent3.enabled = false
+        } else {optionContent3.enabled = true}
+        if optionContent4.enabled == true {
+            optionContent4.enabled = false
+        } else {optionContent4.enabled = true}
+    }
+    
     
     
     

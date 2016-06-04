@@ -135,11 +135,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="next" destination="gTc-3A-7s9" id="hFq-vj-ECP"/>
                         <outlet property="optionContent1" destination="PAF-jE-98c" id="0et-l8-vIi"/>
                         <outlet property="optionContent2" destination="aMr-ah-Kf8" id="gQG-z0-x6j"/>
                         <outlet property="optionContent3" destination="YpO-0x-QbI" id="GNY-UP-b5k"/>
                         <outlet property="optionContent4" destination="96t-Aq-xRs" id="tH4-Ih-cst"/>
                         <outlet property="questionContent" destination="vuk-a1-OPS" id="LiE-EQ-XkV"/>
+                        <outlet property="timerLabel" destination="2Zs-Q4-ECo" id="CPc-EW-2U4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

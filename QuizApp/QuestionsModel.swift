@@ -48,7 +48,7 @@ struct QuestionsModel {
 }
 
 
-//Helper method: Generate an array of non-repeating random number
+// Helper method: Generate an array of non-repeating random number
 
 func getRandomSequence(count: Int) ->[Int] {
     var nums:[Int] = []
@@ -66,4 +66,6 @@ func getRandomSequence(count: Int) ->[Int] {
     return randomNum
 }
 
-
+// Generate an instance of Questions model and randomize the quetsions
+let questions = QuestionsModel()
+let randomizedQuestions = questions.getRandomizeQuestions()

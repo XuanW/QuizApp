@@ -22,18 +22,21 @@ class ViewController: UIViewController {
         
         let questions = QuestionsModel()
         let randomizedQuestions = questions.getRandomizeQuestions()
-        let currentQuestion = randomizedQuestions[0]
         
-        questionContent.text = currentQuestion.questionContent
-        optionContent1.setTitle(currentQuestion.options[0], forState: .Normal)
-        optionContent2.setTitle(currentQuestion.options[1], forState: .Normal)
-        optionContent3.setTitle(currentQuestion.options[2], forState: .Normal)
-        
-        switch currentQuestion.options.count {
-        case 3: optionContent4.hidden = true
-        case 4: optionContent4.setTitle(currentQuestion.options[3], forState: .Normal)
-        default: break
+        func displayQuestion(currentQuestion: Question) {
+            questionContent.text = currentQuestion.questionContent
+            optionContent1.setTitle(currentQuestion.options[0], forState: .Normal)
+            optionContent2.setTitle(currentQuestion.options[1], forState: .Normal)
+            optionContent3.setTitle(currentQuestion.options[2], forState: .Normal)
+            
+            switch currentQuestion.options.count {
+            case 3: optionContent4.hidden = true
+            case 4: optionContent4.setTitle(currentQuestion.options[3], forState: .Normal)
+            default: break
+            }
         }
+        
+        displayQuestion(randomizedQuestions[0])
         
     }
 

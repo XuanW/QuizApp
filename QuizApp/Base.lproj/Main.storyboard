@@ -116,6 +116,9 @@
                     </view>
                     <connections>
                         <outlet property="optionContent1" destination="PAF-jE-98c" id="0et-l8-vIi"/>
+                        <outlet property="optionContent2" destination="aMr-ah-Kf8" id="gQG-z0-x6j"/>
+                        <outlet property="optionContent3" destination="YpO-0x-QbI" id="GNY-UP-b5k"/>
+                        <outlet property="optionContent4" destination="96t-Aq-xRs" id="tH4-Ih-cst"/>
                         <outlet property="questionContent" destination="vuk-a1-OPS" id="LiE-EQ-XkV"/>
                     </connections>
                 </viewController>

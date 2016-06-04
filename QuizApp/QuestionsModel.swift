@@ -65,3 +65,5 @@ func getRandomSequence(count: Int) ->[Int] {
     
     return randomNum
 }
+
+

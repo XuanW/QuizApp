@@ -98,6 +98,24 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, the correct answer is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z06-ju-Fud">
+                                <rect key="frame" x="40" y="417" width="520" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.96862745098039216" green="0.46666666666666667" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer to the question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9e3-m9-IAK">
+                                <rect key="frame" x="40" y="443" width="520" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-3A-7s9">
                                 <rect key="frame" x="40" y="532" width="520" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -113,29 +131,37 @@
                             <constraint firstItem="PAF-jE-98c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="2Py-Cc-cuS"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="top" secondItem="gTc-3A-7s9" secondAttribute="bottom" id="8CY-m6-1s6"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="A9d-bd-qIR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z06-ju-Fud" secondAttribute="trailing" constant="20" id="C6J-Qq-XoY"/>
                             <constraint firstItem="vuk-a1-OPS" firstAttribute="top" secondItem="NFO-NM-Zo1" secondAttribute="bottom" id="CTU-M4-1Xb"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="GKN-eo-lHr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cwi-tx-au9" secondAttribute="bottom" id="H7C-vH-Df6"/>
+                            <constraint firstItem="Z06-ju-Fud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ICt-Za-g4H"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="IPC-pC-5jP"/>
+                            <constraint firstItem="9e3-m9-IAK" firstAttribute="top" secondItem="Z06-ju-Fud" secondAttribute="bottom" multiplier="1.01" id="LLm-R1-y86"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MZB-Sd-heq"/>
                             <constraint firstItem="2Zs-Q4-ECo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Odr-i1-4FH"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="top" secondItem="vuk-a1-OPS" secondAttribute="bottom" multiplier="1.2" id="QXT-0a-LdV"/>
                             <constraint firstItem="gTc-3A-7s9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="WlX-a2-SCf"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="Y11-fh-eNn"/>
+                            <constraint firstItem="Z06-ju-Fud" firstAttribute="baseline" secondItem="2Zs-Q4-ECo" secondAttribute="baseline" id="bC6-np-x4h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gTc-3A-7s9" secondAttribute="trailing" constant="20" id="drq-M9-sqp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Zs-Q4-ECo" secondAttribute="trailing" constant="20" id="dyi-iV-fBX"/>
+                            <constraint firstItem="9e3-m9-IAK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="fZK-oY-knS"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="htb-Kg-PLZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vuk-a1-OPS" secondAttribute="trailing" constant="20" id="j21-Ur-pD1"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jL6-Kh-OJJ"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kJf-JK-4Hh"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kuY-h1-Gfc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9e3-m9-IAK" secondAttribute="trailing" constant="20" id="psb-b7-aEm"/>
                             <constraint firstItem="vuk-a1-OPS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="qqE-uk-yIF"/>
                             <constraint firstItem="2Zs-Q4-ECo" firstAttribute="top" secondItem="nLs-dt-WJ4" secondAttribute="bottom" multiplier="1.05" id="ruz-Il-6vb"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wYc-sM-VDV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="next" destination="gTc-3A-7s9" id="hFq-vj-ECP"/>
+                        <outlet property="correctAnswer" destination="9e3-m9-IAK" id="YSf-iM-eHU"/>
+                        <outlet property="feedbackLabel" destination="Z06-ju-Fud" id="HSm-Gr-yIj"/>
+                        <outlet property="nextButton" destination="gTc-3A-7s9" id="Bu3-Tu-4aq"/>
                         <outlet property="optionContent1" destination="PAF-jE-98c" id="0et-l8-vIi"/>
                         <outlet property="optionContent2" destination="aMr-ah-Kf8" id="gQG-z0-x6j"/>
                         <outlet property="optionContent3" destination="YpO-0x-QbI" id="GNY-UP-b5k"/>

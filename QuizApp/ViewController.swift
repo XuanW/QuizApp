@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var optionContent3: UIButton!
     @IBOutlet weak var optionContent4: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var next: UIButton!
+    @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var correctAnswer: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    
     
 
     let questionsPerRound = 4
@@ -29,7 +32,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        next.hidden = true
+        nextButton.hidden = true
+        feedbackLabel.hidden = true
+        correctAnswer.hidden = true
         displayQuestion(getCurrentQuestion())
         startTimer()
         
@@ -71,6 +76,10 @@ class ViewController: UIViewController {
         
         if(seconds == 0)  {
             timer.invalidate()
+            timerLabel.hidden = true
+            nextButton.hidden = false
+            feedbackLabel.hidden = false
+            correctAnswer.hidden = false
         }
     }
 }

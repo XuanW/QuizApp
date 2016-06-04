@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107B88021D02A14700524449 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B88011D02A14700524449 /* QuestionsModel.swift */; };
 		10EBF0881D02961C00888CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBF0871D02961C00888CD3 /* AppDelegate.swift */; };
 		10EBF08A1D02961C00888CD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBF0891D02961C00888CD3 /* ViewController.swift */; };
 		10EBF08D1D02961C00888CD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10EBF08B1D02961C00888CD3 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107B88011D02A14700524449 /* QuestionsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
 		10EBF0841D02961C00888CD3 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EBF0871D02961C00888CD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10EBF0891D02961C00888CD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				10EBF0871D02961C00888CD3 /* AppDelegate.swift */,
 				10EBF0891D02961C00888CD3 /* ViewController.swift */,
 				10EBF08B1D02961C00888CD3 /* Main.storyboard */,
+				107B88011D02A14700524449 /* QuestionsModel.swift */,
 				10EBF08E1D02961C00888CD3 /* Assets.xcassets */,
 				10EBF0901D02961C00888CD3 /* LaunchScreen.storyboard */,
 				10EBF0931D02961C00888CD3 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107B88021D02A14700524449 /* QuestionsModel.swift in Sources */,
 				10EBF08A1D02961C00888CD3 /* ViewController.swift in Sources */,
 				10EBF0881D02961C00888CD3 /* AppDelegate.swift in Sources */,
 			);
@@ -286,6 +290,7 @@
 				10EBF0981D02961C00888CD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

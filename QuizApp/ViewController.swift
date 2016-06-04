@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     var seconds = 0
     var timer = NSTimer()
     
+    let colorGreen = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
+    let colorRed = UIColor(red: 247.0/255.0, green: 119.0/255.0, blue: 111.0/255.0, alpha: 1.0)
+    let colorText = UIColor(red: 80.0/255.0, green: 81.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -77,6 +81,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func checkAnswer(sender: UIButton) {
+        // Disable buttons before the next question shows
+        optionContent1.enabled = false
+        optionContent2.enabled = false
+        optionContent3.enabled = false
+        optionContent4.enabled = false
+        sender.setTitleColor(colorText, forState: .Disabled)
+        
         let playerAnswer = sender.titleForState(.Normal)
         if playerAnswer == questions[questionsAsked].answer {
             score += 1
@@ -85,15 +96,13 @@ class ViewController: UIViewController {
             showFeedback(result: false)
         }
         questionsAsked += 1
+
     }
     
     func showFeedback(result right: Bool) {
         timer.invalidate()
         timerLabel.hidden = true
         nextButton.hidden = false
-        
-        let colorGreen = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
-        let colorRed = UIColor(red: 247.0/255.0, green: 119.0/255.0, blue: 111.0/255.0, alpha: 1.0)
         
         if right == true {
             feedbackLabel.text = "Correct!"

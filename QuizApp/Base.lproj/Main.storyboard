@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFO-NM-Zo1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-dt-WJ4">
+                                <rect key="frame" x="90" y="101" width="420" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAF-jE-98c">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.8784313725490196" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.31372549020000001" green="0.31764705879999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Option 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMr-ah-Kf8">
+                                        <rect key="frame" x="0.0" y="80" width="420" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.31372549020000001" green="0.31764705879999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Option 2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpO-0x-QbI">
+                                        <rect key="frame" x="0.0" y="160" width="420" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.31372549020000001" green="0.31764705879999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Option 3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96t-Aq-xRs">
+                                        <rect key="frame" x="0.0" y="240" width="420" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.87843137250000003" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.31372549020000001" green="0.31764705879999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Option 4"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YpO-0x-QbI" firstAttribute="height" secondItem="PAF-jE-98c" secondAttribute="height" id="GKZ-av-UwK"/>
+                                    <constraint firstItem="aMr-ah-Kf8" firstAttribute="height" secondItem="PAF-jE-98c" secondAttribute="height" id="w68-Dk-WLT"/>
+                                    <constraint firstItem="96t-Aq-xRs" firstAttribute="height" secondItem="PAF-jE-98c" secondAttribute="height" id="xgp-nh-Vh1"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This was the only US President to serve more than two consecutive terms." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuk-a1-OPS">
+                                <rect key="frame" x="40" y="36" width="520" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left: 15s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zs-Q4-ECo">
+                                <rect key="frame" x="40" y="421" width="520" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-3A-7s9">
+                                <rect key="frame" x="40" y="532" width="520" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" red="1" green="0.87843137250000003" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-tx-au9">
+                                <rect key="frame" x="0.0" y="564" width="600" height="36"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PAF-jE-98c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="2Py-Cc-cuS"/>
+                            <constraint firstItem="Cwi-tx-au9" firstAttribute="top" secondItem="gTc-3A-7s9" secondAttribute="bottom" id="8CY-m6-1s6"/>
+                            <constraint firstItem="NFO-NM-Zo1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="A9d-bd-qIR"/>
+                            <constraint firstItem="vuk-a1-OPS" firstAttribute="top" secondItem="NFO-NM-Zo1" secondAttribute="bottom" id="CTU-M4-1Xb"/>
+                            <constraint firstItem="nLs-dt-WJ4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="GKN-eo-lHr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cwi-tx-au9" secondAttribute="bottom" id="H7C-vH-Df6"/>
+                            <constraint firstItem="nLs-dt-WJ4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="IPC-pC-5jP"/>
+                            <constraint firstItem="NFO-NM-Zo1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MZB-Sd-heq"/>
+                            <constraint firstItem="2Zs-Q4-ECo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Odr-i1-4FH"/>
+                            <constraint firstItem="nLs-dt-WJ4" firstAttribute="top" secondItem="vuk-a1-OPS" secondAttribute="bottom" multiplier="1.2" id="QXT-0a-LdV"/>
+                            <constraint firstItem="gTc-3A-7s9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="WlX-a2-SCf"/>
+                            <constraint firstItem="Cwi-tx-au9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="Y11-fh-eNn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gTc-3A-7s9" secondAttribute="trailing" constant="20" id="drq-M9-sqp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Zs-Q4-ECo" secondAttribute="trailing" constant="20" id="dyi-iV-fBX"/>
+                            <constraint firstItem="NFO-NM-Zo1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="htb-Kg-PLZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vuk-a1-OPS" secondAttribute="trailing" constant="20" id="j21-Ur-pD1"/>
+                            <constraint firstItem="Cwi-tx-au9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jL6-Kh-OJJ"/>
+                            <constraint firstItem="Cwi-tx-au9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kJf-JK-4Hh"/>
+                            <constraint firstItem="nLs-dt-WJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kuY-h1-Gfc"/>
+                            <constraint firstItem="vuk-a1-OPS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="qqE-uk-yIF"/>
+                            <constraint firstItem="2Zs-Q4-ECo" firstAttribute="top" secondItem="nLs-dt-WJ4" secondAttribute="bottom" multiplier="1.05" id="ruz-Il-6vb"/>
+                            <constraint firstItem="NFO-NM-Zo1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wYc-sM-VDV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionContent" destination="vuk-a1-OPS" id="LiE-EQ-XkV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="451"/>
+        </scene>
+    </scenes>
+</document>

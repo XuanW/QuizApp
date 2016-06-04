@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var correctAnswer: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
-    
-
+    let questions = QuestionsModel().getRandomizeQuestions()
     let questionsPerRound = 4
     var questionsAsked = 0
     var score = 0
@@ -32,11 +31,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        displayQuestion(questions[questionsAsked])
         nextButton.hidden = true
         feedbackLabel.hidden = true
         correctAnswer.hidden = true
-        displayQuestion(getCurrentQuestion())
+//        displayQuestion(getCurrentQuestion())
         startTimer()
         
     }
@@ -46,11 +45,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getCurrentQuestion() -> Question {
-        let currentQuestion = randomizedQuestions[questionsAsked]
-        questionsAsked += 1
-        return currentQuestion
-    }
     
     func displayQuestion(currentQuestion: Question) {
         questionContent.text = currentQuestion.questionContent
@@ -105,6 +99,7 @@ class ViewController: UIViewController {
         } else if right == false {
             feedbackLabel.textColor = colorRed
             feedbackLabel.text = "Sorry, the correct answer is"
+            correctAnswer.text = questions[questionsAsked].answer
             feedbackLabel.hidden = false
             correctAnswer.hidden = false
         }

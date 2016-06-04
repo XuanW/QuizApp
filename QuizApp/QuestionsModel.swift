@@ -66,6 +66,4 @@ func getRandomSequence(count: Int) ->[Int] {
     return randomNum
 }
 
-// Generate an instance of Questions model and randomize the quetsions
-let questions = QuestionsModel()
-let randomizedQuestions = questions.getRandomizeQuestions()
+

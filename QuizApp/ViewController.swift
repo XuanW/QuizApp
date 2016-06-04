@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 
     let questionsPerRound = 4
     var questionsAsked = 0
+    var score = 0
     
     var seconds = 0
     var timer = NSTimer()
@@ -64,8 +65,10 @@ class ViewController: UIViewController {
         }
     }
     
+    // Set up countdown timer
+    
     func startTimer() {
-        seconds = 15
+        seconds = 5
         timerLabel.text = "Time left: \(seconds)s"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.subtractTime), userInfo: nil, repeats: true)
     }
@@ -75,11 +78,38 @@ class ViewController: UIViewController {
         timerLabel.text = "Time left: \(seconds)s"
         
         if(seconds == 0)  {
-            timer.invalidate()
-            timerLabel.hidden = true
-            nextButton.hidden = false
+            showFeedback(result: false)
+        }
+    }
+    
+//    @IBAction func checkAnswer(sender: UIButton) {
+//        let playerAnswer = sender.titleForState(.Normal)
+//        if playerAnswer == getCurrentQuestion().answer {
+//            score += 1
+//        } else {
+//            //
+//        }
+//    }
+    
+    func showFeedback(result right: Bool) {
+        timer.invalidate()
+        timerLabel.hidden = true
+        
+        let colorGreen = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
+        let colorRed = UIColor(red: 247.0/255.0, green: 119.0/255.0, blue: 111.0/255.0, alpha: 1.0)
+        
+        if right == true {
+            feedbackLabel.text = "Correct!"
+            feedbackLabel.textColor = colorGreen
+            feedbackLabel.hidden = false
+        } else if right == false {
+            feedbackLabel.textColor = colorRed
+            feedbackLabel.text = "Sorry, the correct answer is"
             feedbackLabel.hidden = false
             correctAnswer.hidden = false
         }
     }
+    
+    
+    
 }

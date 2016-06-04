@@ -36,6 +36,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGA-OX-p0x"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMr-ah-Kf8">
                                         <rect key="frame" x="0.0" y="80" width="420" height="60"/>
@@ -48,6 +51,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zjo-qc-zmz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpO-0x-QbI">
                                         <rect key="frame" x="0.0" y="160" width="420" height="60"/>
@@ -60,6 +66,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UhE-ZX-qSY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96t-Aq-xRs">
                                         <rect key="frame" x="0.0" y="240" width="420" height="60"/>
@@ -72,6 +81,9 @@
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kA1-2M-CAk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

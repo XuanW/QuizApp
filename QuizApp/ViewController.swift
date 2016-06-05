@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
 
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTitle: UILabel!
     @IBOutlet weak var resultSubtitle: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
+    
+    var correctAnswerSound: SystemSoundID = 0
     
     let questions = QuestionsModel().getRandomizeQuestions()
     let questionsPerGame = 4
@@ -93,6 +96,8 @@ class ViewController: UIViewController {
         if playerAnswer == questions[questionsAsked].answer {
             score += 1
             showFeedback(result: true)
+            loadCorrectAnswerSound()
+            playCorrectAnswerSound()
         } else {
             showFeedback(result: false)
         }
@@ -208,6 +213,16 @@ class ViewController: UIViewController {
             playAgainButton.hidden = true
             view.backgroundColor = colorText
         }
+    }
+    
+    func loadCorrectAnswerSound() {
+        let pathToSoundFile = NSBundle.mainBundle().pathForResource("right", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &correctAnswerSound)
+    }
+    
+    func playCorrectAnswerSound() {
+        AudioServicesPlaySystemSound(correctAnswerSound)
     }
     
 }

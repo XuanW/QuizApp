@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		107B88021D02A14700524449 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107B88011D02A14700524449 /* QuestionsModel.swift */; };
+		107B88071D03EBFA00524449 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 107B88031D03EBFA00524449 /* lose.wav */; };
+		107B88081D03EBFA00524449 /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 107B88041D03EBFA00524449 /* right.wav */; };
+		107B88091D03EBFA00524449 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 107B88051D03EBFA00524449 /* win.wav */; };
+		107B880A1D03EBFA00524449 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 107B88061D03EBFA00524449 /* wrong.wav */; };
 		10EBF0881D02961C00888CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBF0871D02961C00888CD3 /* AppDelegate.swift */; };
 		10EBF08A1D02961C00888CD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBF0891D02961C00888CD3 /* ViewController.swift */; };
 		10EBF08D1D02961C00888CD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10EBF08B1D02961C00888CD3 /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		107B88011D02A14700524449 /* QuestionsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
+		107B88031D03EBFA00524449 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = lose.wav; path = ../../../Sound/lose.wav; sourceTree = "<group>"; };
+		107B88041D03EBFA00524449 /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = right.wav; path = ../../../Sound/right.wav; sourceTree = "<group>"; };
+		107B88051D03EBFA00524449 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = win.wav; path = ../../../Sound/win.wav; sourceTree = "<group>"; };
+		107B88061D03EBFA00524449 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wrong.wav; path = ../../../Sound/wrong.wav; sourceTree = "<group>"; };
 		10EBF0841D02961C00888CD3 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EBF0871D02961C00888CD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10EBF0891D02961C00888CD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 				10EBF08E1D02961C00888CD3 /* Assets.xcassets */,
 				10EBF0901D02961C00888CD3 /* LaunchScreen.storyboard */,
 				10EBF0931D02961C00888CD3 /* Info.plist */,
+				107B88031D03EBFA00524449 /* lose.wav */,
+				107B88041D03EBFA00524449 /* right.wav */,
+				107B88051D03EBFA00524449 /* win.wav */,
+				107B88061D03EBFA00524449 /* wrong.wav */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -126,8 +138,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				10EBF0921D02961C00888CD3 /* LaunchScreen.storyboard in Resources */,
+				107B88081D03EBFA00524449 /* right.wav in Resources */,
 				10EBF08F1D02961C00888CD3 /* Assets.xcassets in Resources */,
+				107B880A1D03EBFA00524449 /* wrong.wav in Resources */,
+				107B88091D03EBFA00524449 /* win.wav in Resources */,
 				10EBF08D1D02961C00888CD3 /* Main.storyboard in Resources */,
+				107B88071D03EBFA00524449 /* lose.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

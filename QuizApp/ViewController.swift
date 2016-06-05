@@ -86,7 +86,9 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(sender: UIButton) {
         // Disable buttons before the next question shows
         switchButtonState()
-//        sender.setTitleColor(colorText, forState: .Disabled)
+        
+        // Highlight the button player selected
+        sender.setTitleColor(colorText, forState: .Disabled)
         
         let playerAnswer = sender.titleForState(.Normal)
         if playerAnswer == questions[questionsAsked].answer {
@@ -124,8 +126,9 @@ class ViewController: UIViewController {
         }
         else {
             // Show next question
-            displayQuestion(questions[questionsAsked])
             switchButtonState()
+            resetDisabledStyle()
+            displayQuestion(questions[questionsAsked])
             feedbackLabel.hidden = true
             correctAnswer.hidden = true
             startTimer()
@@ -146,21 +149,23 @@ class ViewController: UIViewController {
     
     // Helper methods
     
+    // Swtich option buttons between enabled and disabled states
     func switchButtonState() {
-        if optionContent1.enabled == true {
-            optionContent1.enabled = false
-        } else {optionContent1.enabled = true}
-        if optionContent2.enabled == true {
-            optionContent2.enabled = false
-        } else {optionContent2.enabled = true}
-        if optionContent3.enabled == true {
-            optionContent3.enabled = false
-        } else {optionContent3.enabled = true}
-        if optionContent4.enabled == true {
-            optionContent4.enabled = false
-        } else {optionContent4.enabled = true}
+        let btnGroup = [optionContent1, optionContent2, optionContent3, optionContent4]
+        for btn in btnGroup {
+            if btn.enabled == true {
+                btn.enabled = false
+            } else { btn.enabled = true}
+        }
     }
     
+    // Reset the disabled button style so they don't remain highlighted from previous question
+    func resetDisabledStyle() {
+        let btnGroup = [optionContent1, optionContent2, optionContent3, optionContent4]
+        for btn in btnGroup {
+            btn.setTitleColor(colorText.colorWithAlphaComponent(0.2), forState: .Disabled)
+        }
+    }
     
     
     

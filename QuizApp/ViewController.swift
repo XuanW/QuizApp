@@ -25,9 +25,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var playAgainButton: UIButton!
     
     var correctAnswerSound: SystemSoundID = 0
+    var wrongAnswerSound: SystemSoundID = 0
+    var winGameSound: SystemSoundID = 0
+    var loseGameSound: SystemSoundID = 0
     
     let questions = QuestionsModel().getRandomizeQuestions()
-    let questionsPerGame = 4
+    let questionsPerGame = 6
     var questionsAsked = 0 // Acting like an index for the questions array when smaller than questionsPerGame
     var score = 0
     
@@ -100,6 +103,8 @@ class ViewController: UIViewController {
             playCorrectAnswerSound()
         } else {
             showFeedback(result: false)
+            loadWrongAnswerSound()
+            playWrongAnswerSound()
         }
         questionsAsked += 1
 
@@ -154,9 +159,13 @@ class ViewController: UIViewController {
         if (Double(score) / Double(questionsPerGame) >= 0.6) {
             resultTitle.text = "Good job!"
             view.backgroundColor = colorGreen
+            loadWinGameSound()
+            playWinGameSound()
         } else {
             resultTitle.text = "Try again..."
             view.backgroundColor = colorRed
+            loadLoseGameSound()
+            playLoseGameSound()
         }
         
         switchScreen(isResultScreen: true)
@@ -215,6 +224,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // Load and play sound when answer is correct
     func loadCorrectAnswerSound() {
         let pathToSoundFile = NSBundle.mainBundle().pathForResource("right", ofType: "wav")
         let soundURL = NSURL(fileURLWithPath: pathToSoundFile!)
@@ -223,6 +233,39 @@ class ViewController: UIViewController {
     
     func playCorrectAnswerSound() {
         AudioServicesPlaySystemSound(correctAnswerSound)
+    }
+    
+    // Load and play sound when answer is wrong
+    func loadWrongAnswerSound() {
+        let pathToSoundFile = NSBundle.mainBundle().pathForResource("wrong", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &wrongAnswerSound)
+    }
+    
+    func playWrongAnswerSound() {
+        AudioServicesPlaySystemSound(wrongAnswerSound)
+    }
+    
+    // Load and play sound when player wins the game
+    func loadWinGameSound() {
+        let pathToSoundFile = NSBundle.mainBundle().pathForResource("win", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &winGameSound)
+    }
+    
+    func playWinGameSound() {
+        AudioServicesPlaySystemSound(winGameSound)
+    }
+    
+    // Load and play sound when player loses the game
+    func loadLoseGameSound() {
+        let pathToSoundFile = NSBundle.mainBundle().pathForResource("lose", ofType: "wav")
+        let soundURL = NSURL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL, &loseGameSound)
+    }
+    
+    func playLoseGameSound() {
+        AudioServicesPlaySystemSound(loseGameSound)
     }
     
 }

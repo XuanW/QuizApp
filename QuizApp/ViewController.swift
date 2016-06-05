@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var resultTitle: UILabel!
     @IBOutlet weak var resultSubtitle: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     let questions = QuestionsModel().getRandomizeQuestions()
     let questionsPerGame = 4
@@ -38,7 +39,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         displayQuestion(questions[questionsAsked])
-        nextButton.hidden = true
         startTimer()
         
     }
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     // Set up countdown timer
     
     func startTimer() {
-        seconds = 5
+        seconds = 15
         timerLabel.hidden = false
         timerLabel.text = "Time left: \(seconds)s"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.subtractTime), userInfo: nil, repeats: true)
@@ -134,15 +134,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func playAgain() {
+        switchScreen(isResultScreen: false)
+        switchButtonState()
+        resetDisabledStyle()
+        questionsAsked = 0
+        score = 0
+        displayQuestion(questions[questionsAsked])
+        startTimer()
+    }
+    
     func displayScore() {
-        questionContent.hidden = true
-        optionContent1.hidden = true
-        optionContent2.hidden = true
-        optionContent3.hidden = true
-        optionContent4.hidden = true
-        feedbackLabel.hidden =  true
-        correctAnswer.hidden = true
-        nextButton.hidden = true
         
         if (Double(score) / Double(questionsPerGame) >= 0.6) {
             resultTitle.text = "Good job!"
@@ -151,10 +153,12 @@ class ViewController: UIViewController {
             resultTitle.text = "Try again..."
             view.backgroundColor = colorRed
         }
+        
+        switchScreen(isResultScreen: true)
         resultSubtitle.text = "You got \(score) out of \(questionsPerGame) questions right"
-        resultTitle.hidden = false
-        resultSubtitle.hidden = false
     }
+    
+    
     
     // Helper methods
     
@@ -176,6 +180,34 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // Switch interface between question and result
+    func switchScreen(isResultScreen screenState: Bool) {
+        if screenState {
+            questionContent.hidden = true
+            optionContent1.hidden = true
+            optionContent2.hidden = true
+            optionContent3.hidden = true
+            optionContent4.hidden = true
+            feedbackLabel.hidden =  true
+            correctAnswer.hidden = true
+            nextButton.hidden = true
+            resultTitle.hidden = false
+            resultSubtitle.hidden = false
+            playAgainButton.hidden = false
+        } else {
+            questionContent.hidden = false
+            optionContent1.hidden = false
+            optionContent2.hidden = false
+            optionContent3.hidden = false
+            optionContent4.hidden = false
+            feedbackLabel.hidden =  true
+            correctAnswer.hidden = true
+            nextButton.hidden = true
+            resultTitle.hidden = true
+            resultSubtitle.hidden = true
+            playAgainButton.hidden = true
+            view.backgroundColor = colorText
+        }
+    }
     
 }

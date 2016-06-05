@@ -22,6 +22,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFO-NM-Zo1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This was the only US President to serve more than two consecutive terms." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuk-a1-OPS">
+                                <rect key="frame" x="40" y="36" width="520" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                </variation>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-dt-WJ4">
                                 <rect key="frame" x="90" y="101" width="420" height="300"/>
                                 <subviews>
@@ -92,8 +101,17 @@
                                     <constraint firstItem="96t-Aq-xRs" firstAttribute="height" secondItem="PAF-jE-98c" secondAttribute="height" id="xgp-nh-Vh1"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This was the only US President to serve more than two consecutive terms." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuk-a1-OPS">
-                                <rect key="frame" x="40" y="36" width="520" height="48"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-ZL-TVM">
+                                <rect key="frame" x="40" y="145" width="520" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                </variation>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You got 3 out of 4 questions right!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="aC8-fv-lux">
+                                <rect key="frame" x="40" y="197" width="520" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +128,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, the correct answer is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z06-ju-Fud">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, the correct answer is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z06-ju-Fud">
                                 <rect key="frame" x="40" y="417" width="520" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" red="0.96862745098039216" green="0.46666666666666667" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +137,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer to the question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9e3-m9-IAK">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct answer to the question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9e3-m9-IAK">
                                 <rect key="frame" x="40" y="443" width="520" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -144,19 +162,24 @@
                         <color key="backgroundColor" red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PAF-jE-98c" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="2Py-Cc-cuS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aC8-fv-lux" secondAttribute="trailing" constant="20" id="4hK-Yg-K5H"/>
+                            <constraint firstItem="aC8-fv-lux" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5st-IQ-HJ6"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="top" secondItem="gTc-3A-7s9" secondAttribute="bottom" id="8CY-m6-1s6"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="A9d-bd-qIR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z06-ju-Fud" secondAttribute="trailing" constant="20" id="C6J-Qq-XoY"/>
                             <constraint firstItem="vuk-a1-OPS" firstAttribute="top" secondItem="NFO-NM-Zo1" secondAttribute="bottom" id="CTU-M4-1Xb"/>
+                            <constraint firstItem="mSW-ZL-TVM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="FFO-VB-acE"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="GKN-eo-lHr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cwi-tx-au9" secondAttribute="bottom" id="H7C-vH-Df6"/>
                             <constraint firstItem="Z06-ju-Fud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ICt-Za-g4H"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="IPC-pC-5jP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mSW-ZL-TVM" secondAttribute="trailing" constant="20" id="IPd-ne-XxZ"/>
                             <constraint firstItem="9e3-m9-IAK" firstAttribute="top" secondItem="Z06-ju-Fud" secondAttribute="bottom" multiplier="1.01" id="LLm-R1-y86"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MZB-Sd-heq"/>
                             <constraint firstItem="2Zs-Q4-ECo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Odr-i1-4FH"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="top" secondItem="vuk-a1-OPS" secondAttribute="bottom" multiplier="1.2" id="QXT-0a-LdV"/>
                             <constraint firstItem="gTc-3A-7s9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="WlX-a2-SCf"/>
+                            <constraint firstItem="mSW-ZL-TVM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" multiplier="2" id="XVZ-B4-d9e"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="Y11-fh-eNn"/>
                             <constraint firstItem="Z06-ju-Fud" firstAttribute="baseline" secondItem="2Zs-Q4-ECo" secondAttribute="baseline" id="bC6-np-x4h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gTc-3A-7s9" secondAttribute="trailing" constant="20" id="drq-M9-sqp"/>
@@ -165,13 +188,20 @@
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="htb-Kg-PLZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vuk-a1-OPS" secondAttribute="trailing" constant="20" id="j21-Ur-pD1"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jL6-Kh-OJJ"/>
+                            <constraint firstItem="mSW-ZL-TVM" firstAttribute="top" secondItem="NFO-NM-Zo1" secondAttribute="bottom" multiplier="4" constant="1" id="jRe-gD-Rea"/>
                             <constraint firstItem="Cwi-tx-au9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kJf-JK-4Hh"/>
                             <constraint firstItem="nLs-dt-WJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kuY-h1-Gfc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9e3-m9-IAK" secondAttribute="trailing" constant="20" id="psb-b7-aEm"/>
                             <constraint firstItem="vuk-a1-OPS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="qqE-uk-yIF"/>
                             <constraint firstItem="2Zs-Q4-ECo" firstAttribute="top" secondItem="nLs-dt-WJ4" secondAttribute="bottom" multiplier="1.05" id="ruz-Il-6vb"/>
+                            <constraint firstItem="aC8-fv-lux" firstAttribute="top" secondItem="mSW-ZL-TVM" secondAttribute="bottom" multiplier="1.05" id="ugO-H3-vUF"/>
                             <constraint firstItem="NFO-NM-Zo1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wYc-sM-VDV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XVZ-B4-d9e"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="correctAnswer" destination="9e3-m9-IAK" id="YSf-iM-eHU"/>
@@ -182,6 +212,8 @@
                         <outlet property="optionContent3" destination="YpO-0x-QbI" id="GNY-UP-b5k"/>
                         <outlet property="optionContent4" destination="96t-Aq-xRs" id="tH4-Ih-cst"/>
                         <outlet property="questionContent" destination="vuk-a1-OPS" id="LiE-EQ-XkV"/>
+                        <outlet property="resultSubtitle" destination="aC8-fv-lux" id="Ixb-Nw-bFu"/>
+                        <outlet property="resultTitle" destination="mSW-ZL-TVM" id="OhI-p9-1g2"/>
                         <outlet property="timerLabel" destination="2Zs-Q4-ECo" id="CPc-EW-2U4"/>
                     </connections>
                 </viewController>

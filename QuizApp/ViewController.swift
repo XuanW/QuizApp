@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var correctAnswer: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var resultTitle: UILabel!
+    @IBOutlet weak var resultSubtitle: UILabel!
     
     let questions = QuestionsModel().getRandomizeQuestions()
     let questionsPerGame = 4
@@ -37,9 +39,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         displayQuestion(questions[questionsAsked])
         nextButton.hidden = true
-        feedbackLabel.hidden = true
-        correctAnswer.hidden = true
-//        displayQuestion(getCurrentQuestion())
         startTimer()
         
     }
@@ -136,6 +135,7 @@ class ViewController: UIViewController {
     }
     
     func displayScore() {
+        questionContent.hidden = true
         optionContent1.hidden = true
         optionContent2.hidden = true
         optionContent3.hidden = true
@@ -144,7 +144,16 @@ class ViewController: UIViewController {
         correctAnswer.hidden = true
         nextButton.hidden = true
         
-        questionContent.text = "Good job! You got \(score) out of \(questionsPerGame) questions right!"
+        if (Double(score) / Double(questionsPerGame) >= 0.6) {
+            resultTitle.text = "Good job!"
+            view.backgroundColor = colorGreen
+        } else {
+            resultTitle.text = "Try again..."
+            view.backgroundColor = colorRed
+        }
+        resultSubtitle.text = "You got \(score) out of \(questionsPerGame) questions right"
+        resultTitle.hidden = false
+        resultSubtitle.hidden = false
     }
     
     // Helper methods

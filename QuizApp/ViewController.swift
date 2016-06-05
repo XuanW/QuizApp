@@ -29,8 +29,8 @@ class ViewController: UIViewController {
     var winGameSound: SystemSoundID = 0
     var loseGameSound: SystemSoundID = 0
     
-    let questions = QuestionsModel().getRandomizeQuestions()
-    let questionsPerGame = 6
+    var questions = QuestionsModel().getRandomizeQuestions()
+    let questionsPerGame = 4
     var questionsAsked = 0 // Acting like an index for the questions array when smaller than questionsPerGame
     var score = 0
     
@@ -63,7 +63,8 @@ class ViewController: UIViewController {
         
         switch currentQuestion.options.count {
         case 3: optionContent4.hidden = true
-        case 4: optionContent4.setTitle(currentQuestion.options[3], forState: .Normal)
+        case 4: optionContent4.hidden = false;
+                optionContent4.setTitle(currentQuestion.options[3], forState: .Normal)
         default: break
         }
     }
@@ -84,6 +85,8 @@ class ViewController: UIViewController {
         if(seconds == 0)  {
             switchButtonState()
             showFeedback(result: false)
+            loadWrongAnswerSound()
+            playWrongAnswerSound()
             questionsAsked += 1
         }
     }
@@ -145,6 +148,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
+        questions = QuestionsModel().getRandomizeQuestions()
         switchScreen(isResultScreen: false)
         switchButtonState()
         resetDisabledStyle()

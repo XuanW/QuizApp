@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTitle: UILabel!
     @IBOutlet weak var resultSubtitle: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
+    var btnGroup : [UIButton] = [] // Putting all the option buttons into an array for easier group manipulation in later methods
     
     var correctAnswerSound: SystemSoundID = 0
     var wrongAnswerSound: SystemSoundID = 0
@@ -43,10 +44,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         displayQuestion(questions[questionsAsked])
         startTimer()
         
+        // Initialize btnGroup
+        btnGroup.append(optionContent1)
+        btnGroup.append(optionContent2)
+        btnGroup.append(optionContent3)
+        btnGroup.append(optionContent4)
     }
 
     override func didReceiveMemoryWarning() {
@@ -182,7 +187,6 @@ class ViewController: UIViewController {
     
     // Swtich option buttons between enabled and disabled states
     func switchButtonState() {
-        let btnGroup = [optionContent1, optionContent2, optionContent3, optionContent4]
         for btn in btnGroup {
             if btn.enabled == true {
                 btn.enabled = false
@@ -192,7 +196,6 @@ class ViewController: UIViewController {
     
     // Reset the disabled button style so they don't remain highlighted from previous question
     func resetDisabledStyle() {
-        let btnGroup = [optionContent1, optionContent2, optionContent3, optionContent4]
         for btn in btnGroup {
             btn.setTitleColor(colorText.colorWithAlphaComponent(0.2), forState: .Disabled)
         }
